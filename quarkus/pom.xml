@@ -1,0 +1,51 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.quoss.camel</groupId>
+        <artifactId>my-camel</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>quarkus</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    <name>camel :: quarkus</name>
+    <properties>
+        <!-- keep the camel quarkus version defined here in sync with the camel version defined in parent ... -->
+        <camel-quarkus.version>2.7.0</camel-quarkus.version>
+        <!-- ... and derive/set the correct quarkus version from it for the plugin. -->
+        <quarkus.version>${camel-quarkus.version}.Final</quarkus.version>
+    </properties>
+    <modules>
+        <module>camel-quarkus-artemis-fqqn</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.camel.quarkus</groupId>
+                <artifactId>camel-quarkus-bom</artifactId>
+                <version>${camel-quarkus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.quarkus.platform</groupId>
+                <artifactId>quarkus-maven-plugin</artifactId>
+                <version>${quarkus.version}</version>
+                <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>generate-code</goal>
+                            <goal>generate-code-tests</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
