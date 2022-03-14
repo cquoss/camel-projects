@@ -6,4 +6,5 @@ import io.smallrye.config.ConfigMapping;
 public interface MainRouteConfig {
     String acknowledgementModeName();
     int receiveTimeout();
+    String subscriptionDurable();
 }

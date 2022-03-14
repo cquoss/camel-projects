@@ -38,12 +38,22 @@ public class MainRoute extends RouteBuilder {
 
         final String methodName = "configure()";
 
+        CONNECTION_FACTORY.setClientID("client");
+
         ((JmsComponent) getCamelContext().getComponent("jms")).setConnectionFactory(CONNECTION_FACTORY);
 
         ((JmsComponent) getCamelContext().getComponent("jms")).setTransactionManager(
                 new JtaTransactionManager(transaction, transactionManager));
 
-        String jmsUri = String.format("jms:topic:foo::bar?receiveTimeout=%s&acknowledgementModeName=%s", config.receiveTimeout(), config.acknowledgementModeName());
+        String jmsUri;
+        if ("null".equals(config.subscriptionDurable())) {
+            jmsUri = String.format("jms:topic:foo::bar?receiveTimeout=%s&acknowledgementModeName=%s",
+                    config.receiveTimeout(), config.acknowledgementModeName());
+        } else {
+            jmsUri = String.format("jms:topic:foo::bar?receiveTimeout=%s&acknowledgementModeName=%s"
+                    + "&subscriptionDurable=%s&subscriptionName=bar", config.receiveTimeout(), config.acknowledgementModeName(),
+                    config.subscriptionDurable());
+        }
 
         Log.debugf("%s [jmsUri=%s]", methodName, jmsUri);
 
