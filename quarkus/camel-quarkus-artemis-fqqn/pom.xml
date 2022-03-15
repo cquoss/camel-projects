@@ -6,7 +6,7 @@
         <version>1.0</version>
     </parent>
     <groupId>de.quoss.camel.quarkus</groupId>
-    <artifactId>camel-quarkus-artemis-fqnn</artifactId>
+    <artifactId>camel-quarkus-artemis-fqqn</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>camel :: quarkus :: artemis-fqqn</name>
     <dependencies>
