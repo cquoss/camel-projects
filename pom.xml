@@ -1,15 +1,16 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.quoss.camel</groupId>
-    <artifactId>my-camel</artifactId>
+    <artifactId>camel-projects</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
-    <name>camel :: my-camel</name>
+    <name>camel :: camel-projects</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <camel.version>3.14.1</camel.version>
+        <camel.version>3.18.1</camel.version>
     </properties>
     <modules>
+        <module>artemis-fqqn</module>
         <module>quarkus</module>
     </modules>
     <dependencyManagement>
@@ -29,9 +30,9 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.10.0</version>
+                    <version>3.10.1</version>
                     <configuration>
-                        <release>11</release>
+                        <release>17</release>
                     </configuration>
                 </plugin>
             </plugins>

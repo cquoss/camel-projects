@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>de.quoss.camel</groupId>
-        <artifactId>my-camel</artifactId>
+        <artifactId>camel-projects</artifactId>
         <version>1.0</version>
     </parent>
     <artifactId>quarkus</artifactId>
@@ -11,7 +11,7 @@
     <name>camel :: quarkus</name>
     <properties>
         <!-- keep the camel quarkus version defined here in sync with the camel version defined in parent ... -->
-        <camel-quarkus.version>2.7.0</camel-quarkus.version>
+        <camel-quarkus.version>2.12.0</camel-quarkus.version>
         <!-- ... and derive/set the correct quarkus version from it for the plugin. -->
         <quarkus.version>${camel-quarkus.version}.Final</quarkus.version>
     </properties>
@@ -24,6 +24,13 @@
                 <groupId>org.apache.camel.quarkus</groupId>
                 <artifactId>camel-quarkus-bom</artifactId>
                 <version>${camel-quarkus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.quarkus.platform</groupId>
+                <artifactId>quarkus-bom</artifactId>
+                <version>${quarkus.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
