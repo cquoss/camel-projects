@@ -1,5 +1,6 @@
 package de.quoss.camel.artemis.fqqn;
 
+import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
 import org.apache.camel.builder.endpoint.EndpointRouteBuilder;
 
 public class Producer extends EndpointRouteBuilder {
@@ -10,7 +11,7 @@ public class Producer extends EndpointRouteBuilder {
     public void configure() {
         from(direct(ROUTE_ID))
                 .routeId(ROUTE_ID)
-                .to(jms("topic:foo::bar"));
+                .to(jms("topic:foo::bar").connectionFactory(new ActiveMQConnectionFactory("tcp://localhost:61616", "admin", "admin")));
     }
     
 }

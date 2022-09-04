@@ -14,8 +14,8 @@ public class Main {
             context.addRoutes(new Producer());
             context.start();
             final Exchange exchange = ExchangeBuilder.anExchange(context).build();
-            template.send("producer", exchange);
-            Thread.sleep(500L);
+            template.send("direct://producer", exchange);
+            Thread.sleep(5000L);
             context.stop();
         }        
     }

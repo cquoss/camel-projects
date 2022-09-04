@@ -9,7 +9,7 @@ public class Consumer extends EndpointRouteBuilder {
     
     @Override
     public void configure() {
-        from(jms("topic:foo::bar").connectionFactory(new ActiveMQConnectionFactory()))
+        from(jms("topic:foo::bar").connectionFactory(new ActiveMQConnectionFactory("tcp://localhost:61616", "admin", "admin")))
                 .routeId(ROUTE_ID)
                 .log("${exchangeId}");
     }
