@@ -12,6 +12,7 @@
     <modules>
         <module>artemis-fqqn</module>
         <module>quarkus</module>
+        <module>split-aggregate</module>
     </modules>
     <dependencyManagement>
         <dependencies>
