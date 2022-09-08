@@ -11,7 +11,7 @@ public class Producer extends EndpointRouteBuilder {
     public void configure() {
         from(direct(ROUTE_ID))
                 .routeId(ROUTE_ID)
-                .to(jms("topic:foo::bar").connectionFactory(new ActiveMQConnectionFactory("tcp://localhost:61616", "admin", "admin")));
+                .to(jms("topic:foo::bar").connectionFactory(new ActiveMQConnectionFactory("tcp://localhost:61616")));
     }
     
 }

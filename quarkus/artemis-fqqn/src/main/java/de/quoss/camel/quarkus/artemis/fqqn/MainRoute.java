@@ -1,6 +1,7 @@
 package de.quoss.camel.quarkus.artemis.fqqn;
 
-import io.quarkus.logging.Log;
+import de.unioninvestment.md.dp.basis.narayana.ConnectionFactoryProxy;
+import de.unioninvestment.md.dp.basis.narayana.NarayanaTransactionHelper;
 import org.apache.activemq.artemis.jms.client.ActiveMQXAConnectionFactory;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.jms.JmsComponent;
@@ -25,39 +26,24 @@ public class MainRoute extends RouteBuilder {
 
     private final TransactionManager transactionManager;
 
-    private final MainRouteConfig config;
-
-    public MainRoute(final UserTransaction transaction, final TransactionManager transactionManager, final MainRouteConfig config) {
+    public MainRoute(final UserTransaction transaction, final TransactionManager transactionManager) {
         this.transaction = ObjectHelper.notNull(transaction, "User transaction");
         this.transactionManager = ObjectHelper.notNull(transactionManager, "Transaction manger");
-        this.config = ObjectHelper.notNull(config, "Configuration");
     }
 
     @Override
     public void configure() {
 
-        final String methodName = "configure()";
-
         CONNECTION_FACTORY.setClientID("client");
 
-        ((JmsComponent) getCamelContext().getComponent("jms")).setConnectionFactory(CONNECTION_FACTORY);
+        ConnectionFactoryProxy proxy = new ConnectionFactoryProxy(CONNECTION_FACTORY, new NarayanaTransactionHelper(transactionManager));
+
+        ((JmsComponent) getCamelContext().getComponent("jms")).setConnectionFactory(proxy);
 
         ((JmsComponent) getCamelContext().getComponent("jms")).setTransactionManager(
                 new JtaTransactionManager(transaction, transactionManager));
 
-        String jmsUri;
-        if ("null".equals(config.subscriptionDurable())) {
-            jmsUri = String.format("jms:topic:foo::bar?receiveTimeout=%s&acknowledgementModeName=%s",
-                    config.receiveTimeout(), config.acknowledgementModeName());
-        } else {
-            jmsUri = String.format("jms:topic:foo::bar?receiveTimeout=%s&acknowledgementModeName=%s"
-                    + "&subscriptionDurable=%s&subscriptionName=bar", config.receiveTimeout(), config.acknowledgementModeName(),
-                    config.subscriptionDurable());
-        }
-
-        Log.debugf("%s [jmsUri=%s]", methodName, jmsUri);
-
-        from(jmsUri)
+        from("jms:topic:foo?receiveTimeout=30000&subscriptionName=bar&subscriptionDurable=true&subscriptionShared=true")
                 .to("jdbc:default?resetAutoCommit=false");
     }
 
