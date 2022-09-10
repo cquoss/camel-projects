@@ -11,13 +11,14 @@
         <dependencies>
             <!-- 
                 Spring Boot - Camel Compatibility List
+                     2.7.3  - 3.18.2
                      2.7.2  - 3.18.1
-                     2.4.11 - 3.7.6
+                     2.4.11 - 3.7.7
             -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.4.11</version>
+                <version>2.7.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -32,5 +33,6 @@
     </dependencyManagement>
     <modules>
         <module>artemis-fqqn</module>
+        <module>artemis-fqqn-java</module>
     </modules>
 </project>

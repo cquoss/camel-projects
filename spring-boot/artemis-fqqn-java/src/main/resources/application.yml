@@ -1,0 +1,8 @@
+camel:
+  springboot:
+    main-run-controller: true
+logging:
+  file:
+    name: "target/app.log"
+  level:
+    root: trace

@@ -7,10 +7,11 @@
     <name>camel :: camel-projects</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <camel.version>3.7.6</camel.version>
+        <camel.version>3.18.2</camel.version>
     </properties>
     <modules>
         <module>artemis-fqqn</module>
+        <module>camel-sql</module>
         <module>quarkus</module>
         <module>quartz-overlong-process</module>
         <module>split-aggregate</module>
