@@ -29,8 +29,8 @@ public class Main {
             context.setUseBreadcrumb(true);
             context.setMessageHistory(true);
             context.addRoutes(new RawConsumer());
-            context.addRoutes(new TimedConsumer());
-            context.addRoutes(new TypedConsumer());
+            // context.addRoutes(new TimedConsumer());
+            // context.addRoutes(new TypedConsumer());
             context.getRegistry().bind("dataSource", ds);
             context.start();
             Thread.sleep(300000L);

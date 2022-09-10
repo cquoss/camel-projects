@@ -1,4 +1,4 @@
-package de.quoss.camel.split.aggregate;
+package de.quoss.camel.split.route;
 
 import org.apache.camel.builder.AggregationStrategies;
 import org.apache.camel.builder.endpoint.EndpointRouteBuilder;
@@ -6,13 +6,13 @@ import org.apache.camel.builder.endpoint.EndpointRouteBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Route extends EndpointRouteBuilder {
+public class SplitAggregate extends EndpointRouteBuilder {
     
-    static final String ROUTE_ID = "route";
+    static final String ROUTE_ID = "split-aggregate";
     
     @Override
     public void configure() {
-        from(direct(ROUTE_ID))
+        from(timer(ROUTE_ID).repeatCount(1L))
                 .routeId(ROUTE_ID)
                 .process(e -> {
                     final List<Integer> list = new ArrayList<>(1000); 
