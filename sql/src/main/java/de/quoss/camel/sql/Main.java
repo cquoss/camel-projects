@@ -1,6 +1,8 @@
 package de.quoss.camel.sql;
 
-import de.quoss.camel.sql.route.Consumer;
+import de.quoss.camel.sql.route.RawConsumer;
+import de.quoss.camel.sql.route.TimedConsumer;
+import de.quoss.camel.sql.route.TypedConsumer;
 import de.quoss.camel.sql.util.CustomTracer;
 import org.apache.camel.CamelContext;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -26,7 +28,9 @@ public class Main {
             context.setTracing(true);
             context.setUseBreadcrumb(true);
             context.setMessageHistory(true);
-            context.addRoutes(new Consumer());
+            context.addRoutes(new RawConsumer());
+            context.addRoutes(new TimedConsumer());
+            context.addRoutes(new TypedConsumer());
             context.getRegistry().bind("dataSource", ds);
             context.start();
             Thread.sleep(300000L);

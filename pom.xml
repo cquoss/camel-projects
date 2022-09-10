@@ -11,11 +11,11 @@
     </properties>
     <modules>
         <module>artemis-fqqn</module>
-        <module>camel-sql</module>
         <module>quarkus</module>
         <module>quartz-overlong-process</module>
         <module>split-aggregate</module>
         <module>spring-boot</module>
+        <module>sql</module>
     </modules>
     <dependencyManagement>
         <dependencies>
