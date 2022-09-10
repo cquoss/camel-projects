@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS FOO
-(   ID      INTEGER PRIMARY KEY,
-    NAME   VARCHAR(200) 
+create table if not exists foo
+(   id     integer primary key,
+    name   varchar(200) 
 );
