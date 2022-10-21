@@ -11,27 +11,17 @@ public class Stream extends EndpointRouteBuilder {
     
     static final String ROUTE_ID = "stream";
     
-    private static final String PROCESS_0_ID = ROUTE_ID + "-process-0";
-
-    private static final String PROCESS_1_ID = ROUTE_ID + "-process-1";
-
-    private static final String SPLIT_0_ID = ROUTE_ID + "-split-0";
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(Stream.class);
-    
     @Override
     public void configure() {
         
-        from(timer("camel-sql-stream/" + ROUTE_ID).period("5000L"))
+        from(direct(ROUTE_ID))
             .routeId(ROUTE_ID)
             .log("Start")
-            .to(sql("select * from foo").outputType(SqlOutputType.StreamList))
+            .to(sql("select * from customer").outputType(SqlOutputType.StreamList))
             .split(body()).streaming()
                 .process(exchange -> {
-                    Object o = exchange.getMessage().getBody();
-                    LOGGER.info("{} [o={},o.class.name={}]", PROCESS_0_ID, o, o == null ? "null" : o.getClass().getName());
+                    Thread.sleep(200L);
                 })
-                .id(PROCESS_0_ID)
             .end()
             .log("End");
         

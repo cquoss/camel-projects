@@ -3,8 +3,13 @@ package de.quoss.camel.sql.stream;
 import de.quoss.camel.sql.stream.route.Stream;
 import de.quoss.camel.sql.stream.util.CustomTracer;
 import org.apache.camel.CamelContext;
+import org.apache.camel.Exchange;
+import org.apache.camel.ProducerTemplate;
+import org.apache.camel.builder.ExchangeBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.h2.jdbcx.JdbcDataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.sql.DataSource;
 import java.io.File;
@@ -17,28 +22,35 @@ import java.sql.Statement;
 
 public class Main {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
+    
     private void run() throws Exception {
         DataSource ds = createDataSource();
-        executeSql(ds, "create.sql");
-        executeSql(ds, "insert.sql");
+        LOGGER.info("Data source created.");
+        Thread.sleep(10000L);
+        LOGGER.info("Waited 10 seconds.");
         try (final CamelContext context = new DefaultCamelContext()) {
+            final ProducerTemplate template = context.createProducerTemplate();
+            final Exchange in = ExchangeBuilder.anExchange(context).build();
             context.setTracer(new CustomTracer());
             context.setTracing(false);
             context.setUseBreadcrumb(true);
             context.setMessageHistory(true);
             context.addRoutes(new Stream());
-            // context.addRoutes(new TimedConsumer());
-            // context.addRoutes(new TypedConsumer());
             context.getRegistry().bind("dataSource", ds);
             context.start();
-            Thread.sleep(30000L);
+            LOGGER.info("Context started.");
+            final Exchange out = template.send("direct:stream", in);
+            LOGGER.info("Exchange out received: " + out);
             context.stop();
+            LOGGER.info("Context stopped.");
         }
     }
 
     private DataSource createDataSource() {
         JdbcDataSource dataSource = new JdbcDataSource();
-        dataSource.setURL("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1");
+        // dataSource.setURL("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1");
+        dataSource.setURL("jdbc:h2:tcp://localhost/C:/Daten/h2/test");
         dataSource.setUser("sa");
         dataSource.setPassword("");
         return dataSource;
