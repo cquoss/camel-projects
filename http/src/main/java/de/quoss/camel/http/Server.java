@@ -17,7 +17,7 @@ public class Server {
         final HttpServer server = HttpServer.create(address, 10);
         final HttpContext context = server.createContext("/", exchange -> {
             LOGGER.info("{} [exchange={}]", methodName, exchange);
-            exchange.
+            // exchange.
             // sleep 5 minutes
             try {
                 Thread.sleep(300000L);

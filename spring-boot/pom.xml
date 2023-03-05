@@ -7,18 +7,21 @@
     </parent>
     <artifactId>spring-boot</artifactId>
     <packaging>pom</packaging>
+    <properties>
+        <spring-boot.version>2.7.8</spring-boot.version>
+    </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.apache.camel.springboot</groupId>
                 <artifactId>camel-spring-boot-dependencies</artifactId>
-                <version>3.18.1</version>
+                <version>${camel.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
     <modules>
-        <module>artemis-fqqn</module>
+        <module>artemis-camel-springboot-fqqn</module>
     </modules>
 </project>

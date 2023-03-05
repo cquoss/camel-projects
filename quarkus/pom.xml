@@ -16,7 +16,7 @@
         <quarkus.version>${camel-quarkus.version}.Final</quarkus.version>
     </properties>
     <modules>
-        <module>artemis-fqqn</module>
+        <module>artemis-camel-quarkus-fqqn</module>
     </modules>
     <dependencyManagement>
         <dependencies>

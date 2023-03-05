@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <route autoStartup="true" id="consumer-xml">
+        <from uri="jms://topic:foo?subscriptionName=bar&amp;connectionFactory=cf"/>
+        <log message="From consumer."/>
+    </route>
+</routes>
