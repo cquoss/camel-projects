@@ -25,7 +25,7 @@ public class MainXml {
     private static final Logger LOGGER = LoggerFactory.getLogger(MainXml.class);
     
     private void run(final String[] args) throws Exception {
-        final String methodName = "run(Sting[])";
+        final String methodName = "run(String[])";
         final ClassPathXmlApplicationContext springContext = new ClassPathXmlApplicationContext("main.xml");
         try (final CamelContext context = springContext.getBean(CamelContext.class);
              final ProducerTemplate template = context.createProducerTemplate()) {
