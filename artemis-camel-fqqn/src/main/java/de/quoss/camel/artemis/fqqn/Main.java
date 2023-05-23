@@ -18,7 +18,7 @@ public class Main {
     private static final Logger LOGGER = LoggerFactory.getLogger(MainXml.class);
 
     private void run(final String[] args) throws Exception {
-        final String methodName = "run(Sting[])";
+        final String methodName = "run(String[])";
         try (final DefaultCamelContext context = new DefaultCamelContext();
              final ProducerTemplate template = context.createProducerTemplate();
              final ActiveMQConnectionFactory cf = new ActiveMQConnectionFactory("tcp://localhost:61616")) {
