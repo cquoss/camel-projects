@@ -1,12 +1,16 @@
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>de.quoss.camel</groupId>
-        <artifactId>camel-projects</artifactId>
+        <artifactId>camel-projects-root</artifactId>
         <version>1.0</version>
     </parent>
     <artifactId>artemis-camel-fqqn</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <artemis.version>2.35.0</artemis.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.apache.camel</groupId>
@@ -38,18 +42,18 @@
         </dependency>
         <dependency>
             <groupId>org.apache.activemq</groupId>
-            <artifactId>artemis-jms-client</artifactId>
-            <version>2.24.0</version>
+            <artifactId>artemis-jakarta-client</artifactId>
+            <version>${artemis.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.activemq</groupId>
-            <artifactId>artemis-jms-server</artifactId>
-            <version>2.24.0</version>
+            <artifactId>artemis-jakarta-server</artifactId>
+            <version>${artemis.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.11</version>
+            <version>${logback.version}</version>
             <scope>runtime</scope>
         </dependency>
     </dependencies>

@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.quoss.camel</groupId>
+        <artifactId>camel-projects-quarkus</artifactId>
+        <version>1.0</version>
+    </parent>
+    <groupId>de.quoss.camel.quarkus</groupId>
+    <artifactId>artemis-camel-quarkus-fqqn</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>camel :: quarkus :: artemis-camel-quarkus-fqqn</name>
+    <dependencies>
+        <!--
+            Camel Quarkus Dependencies
+        -->
+        <dependency>
+            <groupId>org.apache.camel.quarkus</groupId>
+            <artifactId>camel-quarkus-jms</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel.quarkus</groupId>
+            <artifactId>camel-quarkus-jdbc</artifactId>
+        </dependency>
+        <!--
+            Quarkus Dependencies
+        -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-jdbc-h2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-narayana-jta</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkiverse.artemis</groupId>
+            <artifactId>quarkus-artemis-jms</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <!-- dependency>
+            <groupId>de.unioninvestment.md.dp.basis.eai.camel.quarkus.commons</groupId>
+            <artifactId>narayana-helper</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency -->
+    </dependencies>
+</project>

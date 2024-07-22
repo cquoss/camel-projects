@@ -1,0 +1,14 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.quoss.camel</groupId>
+        <artifactId>camel-projects-root</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>camel-projects-sql</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>camel-projects-sql-consumer</module>
+        <module>camel-projects-sql-stream</module>
+    </modules>
+</project>

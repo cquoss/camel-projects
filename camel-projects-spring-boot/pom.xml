@@ -1,0 +1,27 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.quoss.camel</groupId>
+        <artifactId>camel-projects-root</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>camel-projects-spring-boot</artifactId>
+    <packaging>pom</packaging>
+    <properties>
+        <spring-boot.version>2.7.8</spring-boot.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.camel.springboot</groupId>
+                <artifactId>camel-spring-boot-dependencies</artifactId>
+                <version>${camel.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <modules>
+        <module>artemis-camel-springboot-fqqn</module>
+    </modules>
+</project>

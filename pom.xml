@@ -1,22 +1,26 @@
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.quoss.camel</groupId>
-    <artifactId>camel-projects</artifactId>
+    <artifactId>camel-projects-root</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
     <name>camel :: camel-projects</name>
     <properties>
+        <camel.version>4.7.0</camel.version>
+        <logback.version>1.5.6</logback.version>
+        <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <camel.version>3.20.2</camel.version>
     </properties>
     <modules>
         <module>artemis-camel-fqqn</module>
-        <module>http</module>
-        <module>quarkus</module>
-        <module>quartz-overlong-process</module>
-        <module>split</module>
-        <module>spring-boot</module>
-        <module>sql</module>
+        <module>camel-projects-cron-overlong-process</module>
+        <module>camel-projects-http</module>
+        <module>camel-projects-jms</module>
+        <module>camel-projects-quarkus</module>
+        <module>camel-projects-split</module>
+        <module>camel-projects-spring-boot</module>
+        <module>camel-projects-sql</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -29,18 +33,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.10.1</version>
-                    <configuration>
-                        <release>17</release>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
 </project>
