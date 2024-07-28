@@ -9,9 +9,6 @@
     <artifactId>camel-projects-artemis-fqqn</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Camel :: Projects :: Artemis :: Fully Qualified Queue Names</name>
-    <properties>
-        <artemis.version>2.35.0</artemis.version>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>org.apache.camel</groupId>
