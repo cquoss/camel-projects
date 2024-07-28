@@ -3,13 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>de.quoss.camel</groupId>
-        <artifactId>camel-projects-quarkus</artifactId>
+        <artifactId>camel-projects-quarkus-artemis</artifactId>
         <version>1.0</version>
     </parent>
-    <groupId>de.quoss.camel.quarkus</groupId>
-    <artifactId>artemis-camel-quarkus-fqqn</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <name>camel :: quarkus :: artemis-camel-quarkus-fqqn</name>
+    <artifactId>camel-projects-quarkus-artemis-fqqn</artifactId>
+    <name>Camel :: Projects :: Quarkus :: Artemis :: Fully Qualified Queue Names</name>
     <dependencies>
         <!--
             Camel Quarkus Dependencies

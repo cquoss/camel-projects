@@ -1,9 +1,5 @@
 package de.quoss.camel.sql.stream;
 
-import de.quoss.camel.sql.stream.route.Stream;
-import de.quoss.camel.sql.stream.util.CustomTracer;
-import org.apache.camel.CamelContext;
-import org.apache.camel.impl.DefaultCamelContext;
 import org.h2.jdbcx.JdbcDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

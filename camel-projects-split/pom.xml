@@ -6,7 +6,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>camel-projects-split</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <name>Camel :: Projects :: Split</name>
     <properties>
         <camel.version>3.13.0</camel.version>
     </properties>

@@ -7,21 +7,26 @@
     </parent>
     <artifactId>camel-projects-spring-boot</artifactId>
     <packaging>pom</packaging>
-    <properties>
-        <spring-boot.version>2.7.8</spring-boot.version>
-    </properties>
+    <name>Camel :: Projects :: Spring Boot</name>
+    <modules>
+        <module>camel-projects-spring-boot-artemis</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.apache.camel.springboot</groupId>
                 <artifactId>camel-spring-boot-dependencies</artifactId>
-                <version>${camel.version}</version>
+                <version>${camel-spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <modules>
-        <module>artemis-camel-springboot-fqqn</module>
-    </modules>
 </project>

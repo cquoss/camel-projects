@@ -9,13 +9,17 @@
     <properties>
         <artemis.version>2.35.0</artemis.version>
         <camel.version>4.7.0</camel.version>
+        <camel-quarkus.version>3.12.0</camel-quarkus.version>
+        <camel-spring-boot.version>4.7.0</camel-spring-boot.version>
         <logback.version>1.5.6</logback.version>
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <quarkus.version>3.12.3</quarkus.version>
+        <spring-boot.version>3.3.2</spring-boot.version>
     </properties>
     <modules>
-        <module>artemis-camel-fqqn</module>
-        <module>camel-projects-cron-overlong-process</module>
+        <module>camel-projects-artemis</module>
+        <module>camel-projects-cron</module>
         <module>camel-projects-http</module>
         <module>camel-projects-jms</module>
         <module>camel-projects-quarkus</module>

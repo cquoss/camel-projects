@@ -1,0 +1,15 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.quoss.camel</groupId>
+        <artifactId>camel-projects-spring-boot</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>camel-projects-spring-boot-artemis</artifactId>
+    <packaging>pom</packaging>
+    <name>Camel :: Projects :: Spring Boot :: Artemis</name>
+    <modules>
+        <module>camel-projects-spring-boot-artemis-fqqn-java</module>
+        <module>camel-projects-spring-boot-artemis-fqqn-xml</module>
+    </modules>
+</project>

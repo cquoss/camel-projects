@@ -6,10 +6,11 @@
         <artifactId>camel-projects-root</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>camel-projects-jms</artifactId>
+    <artifactId>camel-projects-artemis</artifactId>
     <packaging>pom</packaging>
-    <name>Camel :: Projects :: JMS</name>
+    <name>Camel :: Projects :: Artemis</name>
     <modules>
-        <module>camel-projects-jms-sub-0</module>
+        <module>camel-projects-artemis-fqqn</module>
     </modules>
 </project>
+

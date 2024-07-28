@@ -1,7 +1,6 @@
 package de.quoss.camel.sql.stream;
 
 import de.quoss.camel.sql.stream.route.Stream;
-import de.quoss.camel.sql.stream.util.CustomTracer;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -32,7 +31,6 @@ public class Main {
         try (final CamelContext context = new DefaultCamelContext()) {
             final ProducerTemplate template = context.createProducerTemplate();
             final Exchange in = ExchangeBuilder.anExchange(context).build();
-            context.setTracer(new CustomTracer());
             context.setTracing(false);
             context.setUseBreadcrumb(true);
             context.setMessageHistory(true);

@@ -5,11 +5,10 @@
         <artifactId>camel-projects-root</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>camel-projects-sql</artifactId>
-    <name>Camel :: Projects :: SQL</name>
+    <artifactId>camel-projects-cron</artifactId>
+    <name>Camel :: Projects :: Cron</name>
     <packaging>pom</packaging>
     <modules>
-        <module>camel-projects-sql-consumer</module>
-        <module>camel-projects-sql-stream</module>
+        <module>camel-projects-cron-overlong-process</module>
     </modules>
 </project>

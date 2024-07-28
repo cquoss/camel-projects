@@ -3,13 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>de.quoss.camel</groupId>
-        <artifactId>camel-projects-root</artifactId>
+        <artifactId>camel-projects-quarkus</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>camel-projects-jms</artifactId>
+    <artifactId>camel-projects-quarkus-artemis</artifactId>
     <packaging>pom</packaging>
-    <name>Camel :: Projects :: JMS</name>
+    <name>Camel :: Projects :: Quarkus :: Artemis</name>
     <modules>
-        <module>camel-projects-jms-sub-0</module>
+        <module>camel-projects-quarkus-artemis-fqqn</module>
     </modules>
 </project>

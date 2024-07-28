@@ -2,11 +2,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>de.quoss.camel</groupId>
-        <artifactId>camel-projects-root</artifactId>
+        <artifactId>camel-projects-cron</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>camel-projects-cron-long-process</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>camel-projects-cron-overlong-process</artifactId>
+    <name>Camel :: Projects :: Cron :: Overlong Process</name>
     <dependencies>
         <dependency>
             <groupId>org.apache.camel</groupId>

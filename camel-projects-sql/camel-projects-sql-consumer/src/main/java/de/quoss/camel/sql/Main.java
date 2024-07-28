@@ -1,9 +1,6 @@
 package de.quoss.camel.sql;
 
 import de.quoss.camel.sql.route.RawConsumer;
-import de.quoss.camel.sql.route.TimedConsumer;
-import de.quoss.camel.sql.route.TypedConsumer;
-import de.quoss.camel.sql.util.CustomTracer;
 import org.apache.camel.CamelContext;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.h2.jdbcx.JdbcDataSource;
@@ -24,7 +21,6 @@ public class Main {
         executeSql(ds, "create.sql");
         executeSql(ds, "insert.sql");
         try (final CamelContext context = new DefaultCamelContext()) {
-            context.setTracer(new CustomTracer());
             context.setTracing(true);
             context.setUseBreadcrumb(true);
             context.setMessageHistory(true);

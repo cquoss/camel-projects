@@ -5,12 +5,8 @@
         <artifactId>camel-projects-sql</artifactId>
         <version>1.0</version>
     </parent>
-    <groupId>de.quoss.camel.sql</groupId>
     <artifactId>camel-projects-sql-consumer</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <properties>
-        <camel.version>3.18.2</camel.version>
-    </properties>
+    <name>Camel :: Projects :: SQL :: Consumer</name>
     <dependencies>
         <dependency>
             <groupId>org.apache.camel</groupId>

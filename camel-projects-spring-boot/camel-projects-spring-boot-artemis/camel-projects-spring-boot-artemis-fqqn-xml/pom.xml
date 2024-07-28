@@ -2,17 +2,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>de.quoss.camel</groupId>
-        <artifactId>camel-projects-spring-boot</artifactId>
+        <artifactId>camel-projects-spring-boot-artemis</artifactId>
         <version>1.0</version>
     </parent>
-    <groupId>de.quoss.camel.spring-boot</groupId>
-    <artifactId>artemis-camel-springboot-fqqn</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>camel-projects-spring-boot-artemis-fqqn-xml</artifactId>
+    <name>Camel :: Projects :: Spring Boot :: Artemis :: Fully Qualified Queue Names :: XML Implementation</name>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <version>${spring-boot.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.yaml</groupId>

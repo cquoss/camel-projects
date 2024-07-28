@@ -8,7 +8,7 @@
     </parent>
     <groupId>de.quoss.camel.jms</groupId>
     <artifactId>camel-projects-jms-sub-0</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <name>Camel :: Projects :: JMS :: Subscription Zero</name>
     <dependencies>
         <dependency>
             <groupId>org.apache.camel</groupId>
